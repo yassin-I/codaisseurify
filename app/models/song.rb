@@ -3,5 +3,6 @@ class Song < ApplicationRecord
   order(:music_genre)
   end
   belongs_to :artist, dependent: :destroy
+  has_many :photos
 
 end

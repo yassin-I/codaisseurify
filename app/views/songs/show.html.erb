@@ -6,3 +6,8 @@
 
 <%= link_to "[Edit]", edit_song_path(@song.id) %>
 <%= link_to "[Delete]", song_path(@song.id), method: :delete, data: { confirm: "Are you sure?" } %>
+
+<h4>Photos</h4>
+<% @song.photos.each do |photo| %>
+  <%= image_tag photo.image %>
+<% end %>

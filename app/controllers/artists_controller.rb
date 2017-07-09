@@ -1,4 +1,4 @@
-5class ArtistsController < ApplicationController
+class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
   # GET /artists
@@ -71,5 +71,5 @@
     def artist_params
       params.require(:artist).permit(:name)
     end
-    
+
 end
