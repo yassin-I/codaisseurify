@@ -2,8 +2,20 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @artist.name %>
+  <%= @artist.music_genre %>
 </p>
+
+<h4>List of Singers</h4>
+
+<% if @valley.songs.any? %>
+  <ul>
+    <% @valley.songs.each do |dino| %>
+      <li><%= singer.music_genre %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no singers in this valley.</p>
+<% end %>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>

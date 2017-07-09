@@ -40,4 +40,9 @@ class SongsController < ApplicationController
 
    redirect_to songs_path
   end
+  private
+
+  def song_params
+   params.require(:song).permit(:music_genre, :producer_name, :image_url, :artist_id)
+  end
 end
