@@ -13,5 +13,5 @@ resources :songs
   # get 'songs/:id/edit' => 'songs#edit', as: :edit_song
   # patch "songs/:id" => "songs#update"
   # delete "songs/:id" => "songs#destroy"
-  # # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

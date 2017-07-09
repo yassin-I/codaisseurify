@@ -1,10 +1,6 @@
 <%= form_for @song do |f| %>
 
-<ul>
-  <% @song.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul><ul>
+ <ul>
    <% @song.errors.full_messages.each do |msg| %>
      <li><%= msg %></li>
    <% end %>
@@ -19,6 +15,7 @@
   <%= f.text_field :image_url %>
 
   <%= f.submit (@song.new_record? ? "Create" : "Update") %>
+
   <%= f.label :artist_id %>
   <%= f.collection_select(:artist_id, Artist.all, :id, :music_genre) %>
 

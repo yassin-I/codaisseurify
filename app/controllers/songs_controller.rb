@@ -20,12 +20,12 @@ class SongsController < ApplicationController
   end
   end
   def edit
-  @song = Song.find(params[:id])
+    @song = Song.find(params[:id])
   end
   def update
     @song = song.find(params[:id])
 
-    song_params = params.require(:song).permit(:name, :age, :image_url)
+    song_params = params.require(:song).permit(:music_genre, :producer_name, :image_url)
 
   if @song.update_attributes(song_params)
       redirect_to @song
@@ -34,15 +34,19 @@ class SongsController < ApplicationController
   end
   end
   def destroy
-   @song = Song.find(params[:id])
+ @song = Song.find(params[:id])
 
-   @song.destroy
+ @song.destroy
 
-   redirect_to songs_path
+ redirect_to songs_path
   end
+
   private
 
   def song_params
-   params.require(:song).permit(:music_genre, :producer_name, :image_url, :artist_id)
+   params.require(:song).permit(:music_genre, :producer_name, :image_url)
   end
+  def photo
+     params[:images].present? ? params.require(:images) : []
+   end
 end
