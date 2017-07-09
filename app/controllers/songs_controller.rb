@@ -22,4 +22,22 @@ class SongsController < ApplicationController
   def edit
   @song = Song.find(params[:id])
   end
+  def update
+    @song = song.find(params[:id])
+
+    song_params = params.require(:song).permit(:name, :age, :image_url)
+
+  if @song.update_attributes(song_params)
+      redirect_to @song
+  else
+      render 'edit'
+  end
+  end
+  def destroy
+   @song = Song.find(params[:id])
+
+   @song.destroy
+
+   redirect_to songs_path
+  end
 end

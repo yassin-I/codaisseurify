@@ -2,3 +2,7 @@
 
 <p>Producer_name: <%= @song.producer_name %></p>
 <%= image_tag @song.image_url %>
+<hr>
+
+<%= link_to "[Edit]", edit_song_path(@song.id) %>
+<%= link_to "[Delete]", song_path(@song.id), method: :delete, data: { confirm: "Are you sure?" } %>
