@@ -10,6 +10,11 @@
 
   <body>
   <%= render "shared/navbar" %>
+  <%= yield %>
+
+  <br><br>
+  <hr>
+  <%= link_to "[All Songs]", root_path %>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
